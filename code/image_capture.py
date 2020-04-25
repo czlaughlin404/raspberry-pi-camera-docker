@@ -61,7 +61,7 @@ def main():
    filename = file_path+timestamp+'.jpg'
    camera.annotate_text = timestamp
    camera.capture(filename)
-   os.chmod (filename, 0o775)
+   os.chmod (filename, 0o777)
    
    if int(time.strftime('%M')) % prune_interval == 0:
      print (time.strftime('%M'),'run prune')

@@ -1,1 +1,1 @@
-./docker build -t image_capture .
+docker build -t image_capture .
