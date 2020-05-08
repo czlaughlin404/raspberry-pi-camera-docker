@@ -1,4 +1,4 @@
-# raspberry-pi-docker
+# raspberry-pi-camera-docker
 
 This project builds a Docker container that includes a base UNIX image, Raspberry Pi Camera software driver and a Python program that takes images in an infinite loop.
 
