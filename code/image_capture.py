@@ -7,7 +7,7 @@ import os
 #  initialize camera and seed variables
 file_base = 'ml_image/'
 file_path = file_base+'capture/'
-sleep_time = 20       #seconds
+sleep_time = 10       #seconds
 prune_interval = 15   #minutes
 prune_age = (24*60*60)    #seconds
 image_capture_pixel = 300
@@ -15,6 +15,8 @@ image_capture_pixel = 300
 camera = PiCamera()
 camera.resolution=(image_capture_pixel,image_capture_pixel)
 camera.annotate_text_size=10
+camera.exposure_mode='auto'
+camera.awb_mode='auto'
 
 
 def prune_image_folder():
@@ -59,6 +61,7 @@ def main():
   
    timestamp = str(dt.datetime.now().strftime('%Y%m%d%H%M%S'))
    filename = file_path+timestamp+'.jpg'
+   # Annotation with timestamp for security audit aspect
    camera.annotate_text = timestamp
    camera.capture(filename)
    os.chmod (filename, 0o777)
